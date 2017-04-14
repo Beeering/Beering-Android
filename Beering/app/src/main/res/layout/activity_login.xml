@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/group">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="269dp"
+        android:id="@+id/logo"
+        android:src="@drawable/beering_logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="80.8dp"/>
+    <TextView
+        android:layout_width="260.2dp"
+        android:layout_height="83.2dp"
+        android:id="@+id/text1"
+        android:text="맥주 검색, 펍 검색, 맥주 평가까지-
+Beering에서 나만의 맥주를 완성하세요!"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:letterSpacing="-0.02"
+        android:lineSpacingExtra="11.8sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="19.8dp"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#495395"
+        android:layout_gravity="center"
+        android:layout_marginTop="67.5dp"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#ff7415"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/tmp_btn"
+        android:text="메인ㄱ"
+        android:layout_gravity="center"
+        />
+
+</LinearLayout>
