@@ -20,11 +20,11 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-            />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".BeerDetailActivity"></activity>
     </application>
 
 </manifest>
