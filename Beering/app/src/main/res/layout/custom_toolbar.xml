@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize"
+    app:theme="@style/ToolbarColoredBackArrow"
     android:background="#ff7415">
 
     <ImageView
         android:layout_width="83.5dp"
         android:layout_height="31.5dp"
         android:id="@+id/logo"
-        android:src="@drawable/logo"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo_text"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:letterSpacing="-0.01"
         android:layout_gravity="center"/>
 
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:id="@+id/search_btn"
-        android:src="@drawable/search"
         android:layout_gravity="right"
-        android:layout_marginRight="14.2dp"/>
+        android:layout_marginRight="14.2dp" />
 
 </android.support.v7.widget.Toolbar>
 
