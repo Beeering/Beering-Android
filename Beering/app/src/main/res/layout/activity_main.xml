@@ -37,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@color/colorNavBar"
-        app:itemIconTint="@color/colorNavUnSelectedBar"
-        app:itemTextColor="@color/colorNavUnSelectedBar"
+        app:itemIconTint="@drawable/bottom_navbar_selector"
+        app:itemTextColor="@drawable/bottom_navbar_selector"
         app:menu="@menu/navigation" />
 
 </LinearLayout>
