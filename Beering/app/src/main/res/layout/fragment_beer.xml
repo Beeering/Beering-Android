@@ -2,12 +2,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eff2f4"
     tools:context="io.beering.beering.Fragement.BeerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="비어 프래그먼트" />
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        >
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:buttonTint="#ff7415"
+            android:textColor="#34373c"
+            android:textSize="15.2sp"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="11.5dp"
+            android:text="수제맥주만 보기" />
+
+
+
+    </ScrollView>
 
 </FrameLayout>

@@ -123,11 +123,11 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         beerFragment = new BeerFragment();
-        profileFragment = new ProfileFragment();
         pubFragment = new PubFragment();
+        profileFragment = new ProfileFragment();
         adapter.addFragment(beerFragment);
-        adapter.addFragment(profileFragment);
         adapter.addFragment(pubFragment);
+        adapter.addFragment(profileFragment);
         viewPager.setAdapter(adapter);
     }
 

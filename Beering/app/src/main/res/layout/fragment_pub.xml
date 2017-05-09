@@ -2,12 +2,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.beering.beering.Fragement.PubFragment">
+    tools:context="io.beering.beering.Fragement.PubFragment"
+    android:background="#eff2f4">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="맥주집 프래그먼트" />
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pub"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="#3e3936"
+            android:layout_marginLeft="17.4dp"
+            android:layout_marginTop="14.2dp"/>
+
+    </ScrollView>
 
 </FrameLayout>
