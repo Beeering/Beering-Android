@@ -22,7 +22,6 @@ import static io.beering.beering.R.id.logo_text;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
     private ViewPager viewPager;
 
     BeerFragment beerFragment;
@@ -38,15 +37,12 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.main_beer:
                     viewPager.setCurrentItem(0);
-                    mTextMessage.setText(R.string.main_beer);
                     return true;
                 case R.id.main_pub:
                     viewPager.setCurrentItem(1);
-                    mTextMessage.setText(R.string.main_pub);
                     return true;
                 case R.id.my_profile:
                     viewPager.setCurrentItem(2);
-                    mTextMessage.setText(R.string.my_profile);
                     return true;
             }
             return false;
@@ -61,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         viewPager = (ViewPager)findViewById(R.id.viewpager);
 
         final BottomNavigationView bottomNavigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -94,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // 스와이프 기능을 위한 viewpager
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -119,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         setupViewPager(viewPager);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
