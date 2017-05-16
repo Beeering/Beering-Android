@@ -16,6 +16,19 @@
         android:layout_marginLeft="17.4dp"
         android:layout_marginTop="14.2dp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffffff"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="9.2dp"
+        android:text="필터"
+        android:textColor="#43484d"
+        android:drawableRight="@drawable/orange"
+        android:textSize="15.2sp"
+        />
+
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_pub"
