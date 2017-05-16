@@ -30,7 +30,7 @@
             android:textSize="15sp"
             android:textColor="#2d2724"
             android:layout_marginLeft="13dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             />
 
         <TextView
