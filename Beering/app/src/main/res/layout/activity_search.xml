@@ -6,12 +6,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#f9f9f9"
     tools:context="io.beering.beering.MainActivity">
 
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/custom_toolbar"/>
+    
+    <EditText
+        android:layout_width="341.2dp"
+        android:layout_height="40dp"
+        android:id="@+id/search_bar"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:hint="맥주이름을 검색하세요."
+        android:textSize="13sp"
+        android:textColorHint="#747474"
+        android:textColor="#ff7415"
+        android:drawableLeft="@drawable/search_orange"
+        android:paddingLeft="10.5dp"
+        android:drawablePadding="10.5dp"
+        android:background="@drawable/style_search"
+        android:maxLines="1"
+        >
+    </EditText>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#a9a9a9"
+        android:textStyle="bold"
+        android:layout_marginTop="98.5dp"
+        android:layout_marginLeft="18.8dp"
+        android:text="최근 검색어"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="8.2dp"
+        android:background="#cfcfcf">
+    </View>
 
 </LinearLayout>
