@@ -2,25 +2,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="io.beering.beering.Fragement.PubFragment"
     android:background="#eff2f4">
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        >
+        android:text="Pub"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:textColor="#3e3936"
+        android:layout_marginLeft="17.4dp"
+        android:layout_marginTop="14.2dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pub"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:textColor="#3e3936"
-            android:layout_marginLeft="17.4dp"
-            android:layout_marginTop="14.2dp"/>
 
-    </ScrollView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_pub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="57dp"
+        app:layoutManager="GridLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:spanCount="2" />
+
 
 </FrameLayout>
