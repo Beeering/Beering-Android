@@ -36,7 +36,10 @@
         <activity
             android:name=".SearchActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity
+            android:name=".SettingActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
     </application>
 
 </manifest>

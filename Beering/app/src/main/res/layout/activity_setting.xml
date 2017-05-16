@@ -1,9 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f9f9f9"
     tools:context="io.beering.beering.SettingActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/custom_toolbar"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="푸시 알림"
+        android:textSize="15.8sp"
+        android:textColor="#525252"
+        android:paddingTop="11.8dp"
+        android:paddingBottom="10.5dp"
+        android:paddingLeft="26.5dp"
+    />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:layout_marginLeft="17.5dp"
+        android:layout_marginRight="17.5dp">
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:textSize="15.8sp"
+        android:textColor="#525252"
+        android:paddingTop="11.8dp"
+        android:paddingBottom="10.5dp"
+        android:paddingLeft="26.5dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:layout_marginLeft="17.5dp"
+        android:layout_marginRight="17.5dp">
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그아웃"
+        android:textSize="15.8sp"
+        android:textColor="#525252"
+        android:paddingTop="11.8dp"
+        android:paddingBottom="10.5dp"
+        android:paddingLeft="26.5dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:layout_marginLeft="17.5dp"
+        android:layout_marginRight="17.5dp">
+    </View>
+
+</LinearLayout>
