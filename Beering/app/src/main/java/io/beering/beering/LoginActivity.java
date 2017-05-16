@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
+    Button facebookBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // 로그인 없이 이동하는 임시 버튼
         Button tmp = (Button)findViewById(R.id.tmp_btn);
+        facebookBtn = (Button)findViewById(R.id.facebook_login_btn);
 
         tmp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 Toast.makeText(getApplicationContext(), "성공: "+Profile.getCurrentProfile().getName(), Toast.LENGTH_LONG).show();
                 Log.d("Success!!!!", "Login");
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
             }
 
             @Override
