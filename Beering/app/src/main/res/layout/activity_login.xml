@@ -26,9 +26,12 @@ Beering에서 나만의 맥주를 완성하세요!"
         android:layout_gravity="center"
         android:layout_marginTop="19.8dp"/>
 
+
+
     <Button
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:id="@+id/facebook_login_btn"
         android:background="#495395"
         android:layout_gravity="center"
         android:layout_marginTop="67.5dp"
@@ -39,6 +42,7 @@ Beering에서 나만의 맥주를 완성하세요!"
         android:gravity="center|left"
         android:textColor="#ffffff"
         android:textSize="16sp"
+        android:onClick="onClickFaceBookLogin"
         />
 
     <Button

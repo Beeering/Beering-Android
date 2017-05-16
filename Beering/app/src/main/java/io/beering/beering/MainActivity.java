@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ProfileFragment profileFragment;
     PubFragment pubFragment;
     MenuItem prevMenuItem;
+    Toolbar toolbar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -47,9 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         }
-
     };
-
 
 
     @Override
@@ -66,35 +65,17 @@ public class MainActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.rgb(220, 90, 1));
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // 상단 로고 가운데로 하기위해서 타이틀 없애고 이미지 넣음
-        getSupportActionBar().setTitle(null);
-        // toolbar.setLogo(R.drawable.logo);
-
-        ImageView logoImage = (ImageView) findViewById(R.id.logo);
-        logoImage.setImageResource(R.drawable.logo);
-
-        TextView logoText = (TextView) findViewById(logo_text);
-        logoText.setVisibility(View.GONE);
-
-        ImageView searchBtn = (ImageView) findViewById(R.id.search_btn);
-        searchBtn.setImageResource(R.drawable.search);
-        searchBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
         // 스와이프 기능을 위한 viewpager
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+                if (viewPager.getCurrentItem() == 0) toolbarWithLogoImage();
+                if (viewPager.getCurrentItem() == 1) toolbarWithLogoImage();
+                if (viewPager.getCurrentItem() == 2) toolbarProfile();
             }
 
             @Override
@@ -117,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setupViewPager(viewPager);
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -129,6 +109,51 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(pubFragment);
         adapter.addFragment(profileFragment);
         viewPager.setAdapter(adapter);
+    }
+
+    public void toolbarWithLogoImage() {
+        // 상단 로고 가운데로 하기위해서 타이틀 없애고 이미지 넣음
+        getSupportActionBar().setTitle(null);
+        // toolbar.setLogo(R.drawable.logo);
+
+        ImageView logoImage = (ImageView) findViewById(R.id.logo);
+        logoImage.setVisibility(View.VISIBLE);
+        logoImage.setImageResource(R.drawable.logo);
+
+        TextView logoText = (TextView) findViewById(logo_text);
+        logoText.setVisibility(View.GONE);
+
+        ImageView searchBtn = (ImageView) findViewById(R.id.search_btn);
+        searchBtn.setImageResource(R.drawable.search);
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void toolbarProfile() {
+        // 상단 로고 가운데로 하기위해서 타이틀 없앰
+        getSupportActionBar().setTitle(null);
+
+        ImageView logoImage = (ImageView) findViewById(R.id.logo);
+        logoImage.setVisibility(View.GONE);
+
+        TextView logoText = (TextView) findViewById(logo_text);
+        logoText.setVisibility(View.VISIBLE);
+        logoText.setText("마이페이지");
+
+        ImageView searchBtn = (ImageView) findViewById(R.id.search_btn);
+        searchBtn.setImageResource(R.drawable.setting_icon);
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SettingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
