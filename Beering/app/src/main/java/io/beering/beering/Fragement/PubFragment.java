@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import io.beering.beering.PubRecyclerAdapter;
 import io.beering.beering.R;
-import io.beering.beering.BeerRecyclerAdapter;
 
 
 public class PubFragment extends Fragment {
@@ -34,11 +34,11 @@ public class PubFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_view_beer);
+        recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_view_pub);
         layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new BeerRecyclerAdapter();
+        adapter = new PubRecyclerAdapter();
         recyclerView.setAdapter(adapter);
     }
 }

@@ -1,6 +1,5 @@
 package io.beering.beering;
 
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,34 +47,23 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
             R.drawable.beer_7 };
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView itemImage;
+        public ImageView itemBeerImage;
         public TextView itemName;
         public TextView itemStyle;
         public TextView itemNation;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            itemImage = (ImageView)itemView.findViewById(R.id.item_image);
+            itemBeerImage = (ImageView)itemView.findViewById(R.id.item_image_beer);
             itemName = (TextView)itemView.findViewById(R.id.item_name);
             itemStyle = (TextView)itemView.findViewById(R.id.item_style);
             itemNation = (TextView)itemView.findViewById(R.id.item_nation);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-
-                    Snackbar.make(v, "Click detected on item " + position,
-                            Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            });
         }
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_card, parent ,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_card_beer, parent ,false);
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }
@@ -85,7 +73,7 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
         holder.itemName.setText(name[position]);
         holder.itemStyle.setText(style[position]);
         holder.itemNation.setText(nation[position]);
-        holder.itemImage.setImageResource(images[position]);
+        holder.itemBeerImage.setImageResource(images[position]);
     }
 
     @Override
