@@ -358,6 +358,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/write_review"
                 android:text="리뷰쓰기"
                 android:textSize="13.5sp"
                 android:textColor="#43484d"

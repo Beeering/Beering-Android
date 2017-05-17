@@ -1,5 +1,6 @@
 package io.beering.beering;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
@@ -9,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +20,7 @@ public class BeerDetailActivity extends AppCompatActivity {
 
     ImageView beerImage;
     Toolbar toolbar;
+    TextView writeReviewBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +36,23 @@ public class BeerDetailActivity extends AppCompatActivity {
         toolbarSetting();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // 맥주 이미지 원형으로
         beerImage = (ImageView) findViewById(R.id.beer_image_circle);
         beerImage.setBackground(new ShapeDrawable(new OvalShape()));
         beerImage.setClipToOutline(true);
+
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.beer_review_dialog);
+
+        // 리뷰쓰기 Dialog 창
+        writeReviewBtn = (TextView) findViewById(R.id.write_review);
+        writeReviewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.show();
+            }
+        });
 
 
 
@@ -65,6 +82,7 @@ public class BeerDetailActivity extends AppCompatActivity {
         ImageView searchBtn = (ImageView) findViewById(R.id.search_btn);
         searchBtn.setVisibility(View.GONE);
     }
+
 
 
 }
