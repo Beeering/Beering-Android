@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="307.5dp"
+    android:layout_height="347.5dp"
+    android:background="#fff1ff"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="39.9dp"
+        android:id="@+id/review_topbar_layout"
+        android:background="#e9e9e9">
+        
+        <ImageButton
+            android:layout_width="9.5dp"
+            android:layout_height="9.5dp"
+            android:src="@drawable/cancel"
+            android:layout_marginTop="15.2dp"
+            android:layout_marginLeft="20.8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:textColor="#414141"
+            android:textSize="13.8sp"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="40.2dp"/>
+        <Button
+            android:layout_width="52.9sp"
+            android:layout_height="29.3dp"
+            android:layout_marginTop="5.2dp"
+            android:layout_alignParentRight="true"
+            android:text="완료"
+            android:textSize="13.8sp"
+            android:textColor="#ffffff"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/review_cancel_button"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="키읔 IPA"
+        android:id="@+id/review_beer_name"
+        android:layout_below="@+id/review_topbar_layout"
+        android:textColor="#525252"
+        android:layout_centerHorizontal="true"
+        android:textSize="21.2sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20sp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/review_beer_name"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_beer_style"
+            android:text="India Pale Ale"
+            android:textSize="12sp"
+            android:textColor="#747474"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:background="#747474"
+            android:id="@+id/review_vertical_line"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/review_beer_style"
+            android:layout_marginRight="6.5dp"
+            android:layout_marginLeft="6.5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/review_beer_nation"
+            android:layout_toRightOf="@+id/review_vertical_line"
+            android:text="South Korea"
+            android:textSize="12sp"
+            android:textColor="#747474"/>
+    </RelativeLayout>
+
+    <RatingBar
+        android:id="@+id/review_star_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/review_beer_name"
+        android:isIndicator="false" android:numStars="5"
+        android:rating="2"
+        android:stepSize="1"
+        android:max="5"
+        style="?android:attr/ratingBarStyleIndicator"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/review_horizon_line"
+        android:layout_below="@+id/review_star_rating"
+        android:background="#cfcfcf"
+        android:layout_marginLeft="16.2dp"
+        android:layout_marginRight="16.2dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이 맥주의 리뷰를 남겨주세요."
+        android:id="@+id/review_guide_text"
+        android:layout_below="@+id/review_horizon_line"
+        android:layout_centerHorizontal="true"
+        android:textColor="#5e6977"
+        android:textSize="12sp"
+        android:layout_marginTop="11dp"/>
+    
+    <TextView
+        android:layout_width="275dp"
+        android:layout_height="122.2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/review_guide_text"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/review_edittext_custom" />
+
+
+
+</RelativeLayout>
