@@ -62,4 +62,9 @@ public class ReviewDialog extends Dialog {
 
 
     }
+
+    public void closeDialog() {
+        Toast.makeText(getApplicationContext(), "리뷰 창 닫기", Toast.LENGTH_SHORT).show();
+        dismiss();
+    }
 }
