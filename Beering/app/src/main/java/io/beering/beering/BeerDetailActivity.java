@@ -41,6 +41,7 @@ public class BeerDetailActivity extends AppCompatActivity {
         beerImage.setBackground(new ShapeDrawable(new OvalShape()));
         beerImage.setClipToOutline(true);
 
+
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.beer_review_dialog);

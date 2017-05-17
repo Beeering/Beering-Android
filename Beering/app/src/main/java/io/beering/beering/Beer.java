@@ -6,5 +6,4 @@ package io.beering.beering;
 
 public class Beer {
 
-
 }

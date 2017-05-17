@@ -9,14 +9,21 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import java.io.UnsupportedEncodingException;
+
+import cz.msebera.android.httpclient.Header;
 import io.beering.beering.Fragement.BeerFragment;
 import io.beering.beering.Fragement.ProfileFragment;
 import io.beering.beering.Fragement.PubFragment;
+import io.beering.beering.Proxy.Proxy;
 
 import static io.beering.beering.R.id.logo_text;
 
@@ -55,6 +62,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+        Proxy.getBeer("/beer/get", 2, new AsyncHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+//                Toast.makeText(getApplicationContext(), "비어 겟 성공.....", Toast.LENGTH_SHORT).show();
+                String str = "";
+                Log.d("비어겟-----", "성공");
+                try {
+                    str = new String(responseBody, "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                Log.d("성공----------", str);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("비어겟-----", "실패");
+            }
+        });
+
+
+
+
 
         viewPager = (ViewPager)findViewById(R.id.viewpager);
 

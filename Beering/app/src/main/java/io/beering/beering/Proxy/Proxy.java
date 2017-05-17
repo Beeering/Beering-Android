@@ -10,7 +10,7 @@ import com.loopj.android.http.RequestParams;
  */
 
 public class Proxy {
-    public static final String BASE_URL = "54.191.148.7:3000";
+    public static final String BASE_URL = "http://54.191.148.7:3000";
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
