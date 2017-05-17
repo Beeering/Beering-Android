@@ -26,6 +26,51 @@
         android:src="@drawable/k_beer_background"
         android:scaleType="centerCrop"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/beer_name"
+        android:text="키읔 IPA"
+        android:layout_marginBottom="13.6dp"
+        android:textColor="#ffffff"
+        android:textSize="21.2sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73.5dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/beer_name"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_style"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:text="India Pale Ale"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="3dp"
+            android:background="#ffffff"
+            android:layout_toRightOf="@+id/beer_style"
+            android:id="@+id/vertical_line"
+            android:layout_marginRight="12.4dp"
+            android:layout_marginLeft="12.4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_nation"
+            android:layout_toRightOf="@+id/vertical_line"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:text="India Pale Ale"/>
+
+    </RelativeLayout>
     
     <ImageView
         android:layout_width="100dp"
@@ -204,15 +249,128 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/beer_detail_desc_text"
         android:paddingLeft="17.5dp"
         android:paddingRight="17.5dp"
         android:textSize="12sp"
         android:lineSpacingExtra="6.5sp"
         android:textColor="#747474"
         android:layout_marginTop="5.5dp"
+        android:layout_marginBottom="13dp"
         android:layout_below="@+id/beer_introduce_text"
         android:text="갓 짠 라임이 떠오르는 은은하고 신선한 과일향! 쓴 맛은 덜하고 부드럽게 넘어가는 목넘김을 자랑하는 키읔 IPA. 산뜻하고 깨끗한 첫 잔으로 제격이다. 이태원 더부스를 방문하여 피맥과 함께 즐겨보자."/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/beer_tag_relative_layout"
+        android:layout_below="@+id/beer_detail_desc_text"
+        android:layout_marginLeft="19dp"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_tag_1"
+            android:minWidth="0dp"
+            android:text="#가벼움"
+            android:textColor="#fc5d13"
+            android:textSize="12sp"
+            android:background="@drawable/beer_tag_layout"
+            android:layout_marginRight="8.2dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_tag_2"
+            android:layout_toRightOf="@+id/beer_tag_1"
+            android:text="#더부스 콜라보"
+            android:minWidth="0dp"
+            android:textColor="#fc5d13"
+            android:textSize="12sp"
+            android:background="@drawable/beer_tag_layout"
+            android:layout_marginRight="8.2dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_tag_3"
+            android:layout_toRightOf="@+id/beer_tag_2"
+            android:text="#시원한목넘김"
+            android:minWidth="0dp"
+            android:textColor="#fc5d13"
+            android:textSize="12sp"
+            android:background="@drawable/beer_tag_layout"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/beer_tag_relative_layout"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#cfcfcf"
+            android:layout_marginTop="15dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17.5dp"
+            android:layout_marginTop="8.5dp"
+            android:layout_marginBottom="8.5dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="리뷰"
+                android:id="@+id/review_text"
+                android:textColor="#43484d"
+                android:textStyle="bold"
+                android:textSize="15.2sp"
+                android:layout_marginRight="9.2dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/review_text"
+                android:text="45"
+                android:textColor="#ff7415"
+                android:textSize="15.2sp"/>
+            <ImageView
+                android:layout_width="17.5dp"
+                android:layout_height="17.5dp"
+
+                android:src="@drawable/comment"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="73.5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="리뷰쓰기"
+                android:textSize="13.5sp"
+                android:textColor="#43484d"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="18.8dp"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cfcfcf"
+            />
+    </LinearLayout>
 
 
 
