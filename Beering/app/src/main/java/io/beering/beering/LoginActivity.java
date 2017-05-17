@@ -26,18 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // 로그인 없이 이동하는 임시 버튼
-        Button tmp = (Button)findViewById(R.id.tmp_btn);
-        facebookBtn = (Button)findViewById(R.id.facebook_login_btn);
-
-        tmp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
         // 페북 로그인 커스텀 버튼
         callbackManager = CallbackManager.Factory.create();
 

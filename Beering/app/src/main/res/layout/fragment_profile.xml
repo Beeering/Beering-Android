@@ -3,18 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="io.beering.beering.Fragement.ProfileFragment"
-    android:background="#eff2f4">
+    android:background="#ffffff">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="프로필"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/profile_image"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/profile_image_tmp"
+                android:adjustViewBounds="true"
+                android:layout_marginTop="27.8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_name"
+                android:textSize="17.5sp"
+                android:textColor="#525252"
+                android:textStyle="bold"
+                android:text="Beergeekkk"
+                android:layout_below="@+id/profile_image"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="13.2dp"
+                android:layout_marginBottom="15dp"
+                />
+
+        </RelativeLayout>
+
 
     </ScrollView>
 

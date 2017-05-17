@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#f9f9f9"
     tools:context="io.beering.beering.SettingActivity">
 
@@ -15,52 +14,72 @@
         layout="@layout/custom_toolbar"/>
     
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/push_alarm_text"
         android:text="푸시 알림"
         android:textSize="15.8sp"
         android:textColor="#525252"
-        android:paddingTop="11.8dp"
-        android:paddingBottom="10.5dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
         android:paddingLeft="26.5dp"
     />
 
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="29dp"
+        android:text="Toggle"
+        android:textOff="Off"
+        android:textOn="On" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:id="@+id/horizon_line_1"
         android:background="#cfcfcf"
         android:layout_marginLeft="17.5dp"
-        android:layout_marginRight="17.5dp">
+        android:layout_marginRight="17.5dp"
+        android:layout_below="@+id/push_alarm_text">
     </View>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/tns_text"
         android:text="이용약관"
         android:textSize="15.8sp"
         android:textColor="#525252"
-        android:paddingTop="11.8dp"
-        android:paddingBottom="10.5dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
         android:paddingLeft="26.5dp"
+        android:layout_below="@+id/horizon_line_1"
         />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:id="@+id/horizon_line_2"
         android:background="#cfcfcf"
         android:layout_marginLeft="17.5dp"
-        android:layout_marginRight="17.5dp">
+        android:layout_marginRight="17.5dp"
+        android:layout_below="@+id/tns_text">
     </View>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/logout_txt"
         android:text="로그아웃"
         android:textSize="15.8sp"
         android:textColor="#525252"
-        android:paddingTop="11.8dp"
-        android:paddingBottom="10.5dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
         android:paddingLeft="26.5dp"
+        android:layout_below="@+id/horizon_line_2"
         />
 
     <View
@@ -68,7 +87,8 @@
         android:layout_height="1dp"
         android:background="#cfcfcf"
         android:layout_marginLeft="17.5dp"
-        android:layout_marginRight="17.5dp">
+        android:layout_marginRight="17.5dp"
+        android:layout_below="@+id/logout_txt">
     </View>
 
-</LinearLayout>
+</RelativeLayout>

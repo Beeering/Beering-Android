@@ -61,12 +61,4 @@ Beering에서 나만의 맥주를 완성하세요!"
         android:textColor="#ffffff"
         android:textSize="16sp" />
 
-    <Button
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-    android:id="@+id/tmp_btn"
-    android:text="메인ㄱ"
-    android:layout_gravity="center"
-    />
-
 </RelativeLayout>
