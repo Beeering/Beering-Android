@@ -1,9 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context="io.beering.beering.BeerDetailActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/appbar"
+        android:layout_height="147dp"
+        android:src="@drawable/k_beer_background"
+        android:scaleType="centerCrop"
+        />
+    
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/beer_image_circle"
+        android:background="#ffffff"
+        android:src="@drawable/k_beer_profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="146dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rating_relative_layout"
+        android:layout_below="@+id/beer_image_circle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13.2dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_text"
+            android:text="평점"
+            android:textStyle="bold"
+            android:textColor="#747474"
+            android:textSize="13sp"
+            android:layout_marginRight="7.2dp"/>
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:id="@+id/beer_star_1"
+            android:src="@drawable/star_orange"
+            android:layout_toRightOf="@+id/rating_text"
+            android:layout_marginRight="2.2dp"
+            android:scaleType="fitXY"
+            />
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:id="@+id/beer_star_2"
+            android:src="@drawable/star_orange"
+            android:layout_toRightOf="@+id/beer_star_1"
+            android:layout_marginRight="2.2dp"
+            android:scaleType="fitXY"
+            />
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:id="@+id/beer_star_3"
+            android:src="@drawable/star_orange"
+            android:layout_toRightOf="@+id/beer_star_2"
+            android:layout_marginRight="2.2dp"
+            android:scaleType="fitXY"
+            />
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:id="@+id/beer_star_4"
+            android:src="@drawable/star_gray"
+            android:layout_toRightOf="@+id/beer_star_3"
+            android:layout_marginRight="2.2dp"
+            android:scaleType="fitXY"
+            />
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:id="@+id/beer_star_5"
+            android:src="@drawable/star_gray"
+            android:layout_toRightOf="@+id/beer_star_4"
+
+            android:scaleType="fitXY"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_beer_relative_layout"
+        android:layout_below="@+id/rating_relative_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp">
+
+        <TextView
+            android:layout_width="22.4dp"
+            android:layout_height="13.8dp"
+            android:id="@+id/ibu_icon"
+            android:textSize="9.5sp"
+            android:textColor="#ffffff"
+            android:background="#6da624"
+            android:gravity="center_horizontal"
+            android:text="IBU"
+            android:layout_marginRight="5.4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_ibu_num"
+            android:text="54"
+            android:textColor="#6da624"
+            android:layout_toRightOf="@+id/ibu_icon"
+            android:textSize="13sp"
+            android:layout_marginRight="7.8dp"
+            />
+        <TextView
+            android:layout_width="22.4dp"
+            android:layout_height="13.8dp"
+            android:id="@+id/abu_icon"
+            android:layout_toRightOf="@id/beer_ibu_num"
+            android:textSize="9.5sp"
+            android:textColor="#ffffff"
+            android:background="#39add1"
+            android:gravity="center_horizontal"
+            android:text="IBU"
+            android:layout_marginRight="5.4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7.5%"
+            android:id="@+id/beer_abu_num"
+            android:textColor="#39add1"
+            android:layout_toRightOf="@+id/abu_icon"
+            android:textSize="13sp"
+            android:layout_marginRight="7.8dp"
+            />
+        <TextView
+            android:layout_width="22.4dp"
+            android:layout_height="13.8dp"
+            android:id="@+id/kcal_icon"
+            android:layout_toRightOf="@+id/beer_abu_num"
+            android:textSize="9.5sp"
+            android:textColor="#ffffff"
+            android:background="#5e6977"
+            android:gravity="center_horizontal"
+            android:text="Kcal"
+            android:layout_marginRight="5.4dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/beer_kcal_num"
+            android:text="240"
+            android:textColor="#5e6977"
+            android:layout_toRightOf="@+id/kcal_icon"
+            android:textSize="13sp"
+            android:layout_marginRight="7.8dp"
+            />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:id="@+id/line_1"
+        android:layout_below="@+id/info_beer_relative_layout"
+        android:layout_marginTop="17.2dp"
+        android:layout_marginRight="17.5dp"
+        android:layout_marginLeft="17.5dp"
+        android:layout_marginBottom="8.2dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="맥주 소개"
+        android:id="@+id/beer_introduce_text"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#747474"
+        android:layout_marginLeft="17.5dp"
+        android:layout_below="@+id/line_1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="17.5dp"
+        android:paddingRight="17.5dp"
+        android:textSize="12sp"
+        android:lineSpacingExtra="6.5sp"
+        android:textColor="#747474"
+        android:layout_marginTop="5.5dp"
+        android:layout_below="@+id/beer_introduce_text"
+        android:text="갓 짠 라임이 떠오르는 은은하고 신선한 과일향! 쓴 맛은 덜하고 부드럽게 넘어가는 목넘김을 자랑하는 키읔 IPA. 산뜻하고 깨끗한 첫 잔으로 제격이다. 이태원 더부스를 방문하여 피맥과 함께 즐겨보자."/>
+
+
+
+
+</RelativeLayout>
