@@ -11,8 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static io.beering.beering.R.id.logo_text;
 
@@ -21,6 +26,15 @@ public class BeerDetailActivity extends AppCompatActivity {
     ImageView beerImage;
     Toolbar toolbar;
     TextView writeReviewBtn;
+
+
+    ImageButton cancelBtn;
+    Button completeBtn;
+    EditText reviewText;
+    RatingBar starRating;
+
+    private String reviewTextContent;
+    private Float reviewStarRating;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +69,28 @@ public class BeerDetailActivity extends AppCompatActivity {
             }
         });
 
+        cancelBtn = (ImageButton)dialog.findViewById(R.id.cancel_button);
+        completeBtn = (Button)dialog.findViewById(R.id.complete_button);
+        starRating = (RatingBar)dialog.findViewById(R.id.review_star_rating);
+        reviewText = (EditText)dialog.findViewById(R.id.review_beer_text);
 
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "리뷰 창 닫기", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        completeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reviewTextContent = reviewText.getText().toString();
+                reviewStarRating = starRating.getRating();
+                Toast.makeText(getApplicationContext(), "완료 누름: "+reviewStarRating, Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
 
     }
 
@@ -83,7 +118,6 @@ public class BeerDetailActivity extends AppCompatActivity {
         ImageView searchBtn = (ImageView) findViewById(R.id.search_btn);
         searchBtn.setVisibility(View.GONE);
     }
-
 
 
 }
