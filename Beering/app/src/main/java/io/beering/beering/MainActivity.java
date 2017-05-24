@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
         Proxy.getBeer("/beer/get", 2, new AsyncHttpResponseHandler() {
 
             @Override
