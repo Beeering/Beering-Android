@@ -3,9 +3,6 @@ package io.beering.beering;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
  * Created by hsun on 2017. 5. 17..
