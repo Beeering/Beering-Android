@@ -53,4 +53,16 @@ public class Proxy {
     private static String getAbsoluteUrl(String relativeUrl) {
         return BASE_URL + relativeUrl;
     }
+
+    public static void setUserId(String url, AsyncHttpResponseHandler responseHandler, String userId) {
+        RequestParams params = new RequestParams();
+        params.put("user_id", userId);
+        client.post(getAbsoluteUrl(url), params, responseHandler);
+    }
+
+    public static void getUserId(String url, String userId, AsyncHttpResponseHandler responseHandler) {
+        RequestParams params = new RequestParams();
+        params.put("user_id", userId);
+        client.get(getAbsoluteUrl(url), responseHandler);
+    }
 }

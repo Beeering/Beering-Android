@@ -89,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
         viewPager = (ViewPager)findViewById(R.id.viewpager);
 
         final BottomNavigationView bottomNavigation = (BottomNavigationView) findViewById(R.id.navigation);
