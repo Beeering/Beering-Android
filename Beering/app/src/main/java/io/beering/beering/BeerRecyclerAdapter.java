@@ -76,6 +76,7 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
                 v.getContext().startActivity(intent);
             }
         });
+
         ViewHolder viewHolder = new ViewHolder(v);
         return viewHolder;
     }

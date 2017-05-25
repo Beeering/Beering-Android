@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="io.beering.beering.PubDetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="198.5dp"
+        android:layout_below="@+id/appbar"
+        android:id="@+id/pub_background"
+        android:src="@drawable/pub_brand_background"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pub_background"
+        android:id="@+id/pub_text_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20.2dp"
+        android:text="더부스 브루잉"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#2d2724"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pub_text_1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/pub_text_2"
+        android:text="The booth brewing"
+        android:textSize="13sp"
+        android:textColor="#ff7415"/>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f5f8"
+        android:layout_below="@id/pub_text_2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/pub_detail_desc_text"
+        android:text="강남점을 처음 찾았을 때 이 시크함, 무심함에 놀랐습니다. 강남역 번화가를 피해 위치해 있음에도, 바깥에는 변변한 간판도 없습니다. 그럼에도 불구하고 사람들이 다 알고 찾아와 항상자리가 만석입니다."
+        android:textSize="11sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="17.5dp"
+        android:layout_marginLeft="17.5dp"
+        android:paddingTop="12.5dp"
+        android:paddingBottom="12.5dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pub_detail_desc_text"
+        android:layout_marginTop="18.5dp"
+        android:layout_marginLeft="17.5dp"
+        android:id="@+id/pub_linear_1">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:text="운영시간"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#747474"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pub_hour"
+            android:layout_marginLeft="14.8dp"
+            android:text="14:00 - 02:00"
+            android:textSize="13sp"
+            android:textColor="#747474"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pub_linear_1"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="17.5dp"
+        android:id="@+id/pub_linear_2">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:text="전화번호"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#747474"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pub_phone"
+            android:layout_marginLeft="14.8dp"
+            android:text="1544-4723"
+            android:textSize="13sp"
+            android:textColor="#747474"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pub_linear_2"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="17.5dp"
+        android:id="@+id/pub_linear_3">
+
+        <TextView
+            android:layout_width="52dp"
+            android:layout_height="wrap_content"
+            android:text="주소"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#747474"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pub_address"
+            android:layout_marginLeft="14.8dp"
+            android:text="서울특별시 용산구 녹사평대로54길 7"
+            android:textSize="13sp"
+            android:textColor="#747474"
+            />
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
+
+
