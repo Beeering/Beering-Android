@@ -53,6 +53,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#747474"
+        android:lineSpacingExtra="3dp"
         android:background="#f1f5f8"
         android:layout_below="@id/pub_text_2"
         android:layout_centerHorizontal="true"
