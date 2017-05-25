@@ -39,7 +39,9 @@
         <activity
             android:name=".SettingActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".PubDetailActivity"></activity>
+        <activity
+            android:name=".PubDetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
