@@ -14,13 +14,8 @@ import com.facebook.FacebookException;
 import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
-
-import cz.msebera.android.httpclient.Header;
-import io.beering.beering.Proxy.Proxy;
 
 public class LoginActivity extends AppCompatActivity {
     CallbackManager callbackManager;
@@ -39,32 +34,32 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
 
 
-                Proxy.getUserId("/users/get", Profile.getCurrentProfile().getId(), new AsyncHttpResponseHandler() {
-                    String str = "";
-
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                        try {
-                            str = new String(responseBody, "UTF-8");
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-                        Log.d("유저겟-------성공-----------", str);
-
-                        // str 내용: {"resultCode":0,"info":[]}
-                        // info가 빈배열이면 없는 유저로 판단. 신규유저로 등록
-                    }
-
-                    @Override
-                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                        try {
-                            str = new String(responseBody, "UTF-8");
-                        } catch (UnsupportedEncodingException e) {
-                            e.printStackTrace();
-                        }
-                        Log.d("유저겟---------실패---------", str);
-                    }
-                });
+//                Proxy.getUserId("/users/get", Profile.getCurrentProfile().getId(), new AsyncHttpResponseHandler() {
+//                    String str = "";
+//
+//                    @Override
+//                    public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+//                        try {
+//                            str = new String(responseBody, "UTF-8");
+//                        } catch (UnsupportedEncodingException e) {
+//                            e.printStackTrace();
+//                        }
+//                        Log.d("유저겟-------성공-----------", str);
+//
+//                        // str 내용: {"resultCode":0,"info":[]}
+//                        // info가 빈배열이면 없는 유저로 판단. 신규유저로 등록
+//                    }
+//
+//                    @Override
+//                    public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+//                        try {
+//                            str = new String(responseBody, "UTF-8");
+//                        } catch (UnsupportedEncodingException e) {
+//                            e.printStackTrace();
+//                        }
+//                        Log.d("유저겟---------실패---------", str);
+//                    }
+//                });
 
 
 

@@ -34,4 +34,8 @@ public class MytasteFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_mytaste, container, false);
     }
 
+
+
+
+
 }

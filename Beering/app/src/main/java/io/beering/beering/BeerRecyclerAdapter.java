@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
@@ -17,39 +19,14 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapter.ViewHolder> {
 
-    private String[] name = {
-            "국민 IPA",
-            "ㅋ IPA",
-            "맥주 3",
-            "맥주 4",
-            "맥주 5",
-            "맥주 6",
-            "맥주 7" };
-    private String[] style = {
-            "India Pale Ale",
-            "India Pale Ale",
-            "Larger",
-            "Larger",
-            "Stout",
-            "Ale",
-            "Larger"};
-    private String[] nation = {
-            "South Korea",
-            "Netherlands",
-            "South Korea",
-            "Japan",
-            "China",
-            "South Korea",
-            "America" };
-    private int[] images = {
-            R.drawable.beer_1,
-            R.drawable.beer_2,
-            R.drawable.beer_3,
-            R.drawable.beer_4,
-            R.drawable.beer_5,
-            R.drawable.beer_6,
-            R.drawable.beer_7 };
+    private List<Beer> beerList;
+    private int itemLayout;
 
+    public BeerRecyclerAdapter(List<Beer> items) {
+        this.beerList = items;
+    }
+
+    //view 재활용을 위한 viewholder
     class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView itemBeerImage;
         public TextView itemName;
@@ -83,14 +60,15 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.itemName.setText(name[position]);
-        holder.itemStyle.setText(style[position]);
-        holder.itemNation.setText(nation[position]);
-        holder.itemBeerImage.setImageResource(images[position]);
+        Beer item = beerList.get(position);
+        holder.itemName.setText(item.getBeerName());
+        holder.itemStyle.setText(item.getBeerStyle());
+        holder.itemNation.setText(item.getBeerNation());
+        holder.itemBeerImage.setImageResource(item.getBeerImage());
     }
 
     @Override
     public int getItemCount() {
-        return name.length;
+        return beerList.size();
     }
 }
