@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:id="@+id/stamp_layout_2">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/stamp_image"
+            android:layout_gravity="center"
+            android:src="@drawable/stamp_1"/>
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.5dp"
+            android:id="@+id/stamp_layout_1"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/stamp_image"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/stamp_name"
+                android:layout_marginBottom="3dp"
+                android:text="국민 IPA"
+                android:textColor="#2d2724"
+                android:textSize="15.2sp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/stamp_style"
+                    android:textColor="#747474"
+                    android:textSize="10sp"
+                    android:text="India Pale ale"/>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="#747474"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginLeft="7dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/stamp_nation"
+                    android:textColor="#747474"
+                    android:textSize="10sp"
+                    android:text="South Korea"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/stamp_layout_1"
+            android:id="@+id/stamp_rated"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="1"
+            android:max="5"
+            android:progressTint="#ff7415"
+            android:progressBackgroundTint="#5e6977"
+            style="?android:attr/ratingBarStyleSmall"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_below="@+id/stamp_layout_2"
+        />
+</RelativeLayout>
+

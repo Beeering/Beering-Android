@@ -5,10 +5,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import io.beering.beering.R;
 
 public class MytasteFragment extends Fragment {
+    TextView ibu_circle;
+    TextView abu_circle;
+    TextView kcal_circle;
+
 
     public MytasteFragment() {
         // Required empty public constructor
@@ -23,7 +28,9 @@ public class MytasteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+
+
         return inflater.inflate(R.layout.fragment_mytaste, container, false);
     }
 

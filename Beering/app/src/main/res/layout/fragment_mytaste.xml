@@ -30,6 +30,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/taste_info_layout"
         android:layout_below="@+id/taste_text_2"
         android:layout_marginTop="26.8dp"
         android:orientation="horizontal"
@@ -39,14 +40,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginRight="24.2dp"
             >
             <TextView
                 android:layout_width="60.8dp"
                 android:layout_height="60.8dp"
-                android:background="#6da624"
+                android:background="@drawable/textview_circle"
+                android:backgroundTint="#6da624"
+                android:textSize="10.5sp"
+                android:textStyle="bold"
+                android:id="@+id/taste_ibu"
                 android:text="IBU"
                 android:gravity="center"
-                android:paddingTop="35.5dp"
+                android:paddingTop="25dp"
                 android:textColor="#ffffff"
                 />
             <TextView
@@ -54,42 +60,91 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:text="높은 편"/>
-
-            <TextView
-                android:layout_width="60.8dp"
-                android:layout_height="60.8dp"
-                android:background="#6da624"
-                android:text="IBU"
-                android:gravity="center"
-                android:paddingTop="35.5dp"
-                android:textColor="#ffffff"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:text="높은 편"/>
-
-            <TextView
-                android:layout_width="60.8dp"
-                android:layout_height="60.8dp"
-                android:background="#6da624"
-                android:text="IBU"
-                android:gravity="center"
-                android:paddingTop="35.5dp"
-                android:textColor="#ffffff"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:text="높은 편"/>
+                android:textColor="#5e6977"
+                android:text="높은 편"
+                android:textSize="12sp"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="24.2dp"
+            >
+            <TextView
+                android:layout_width="60.8dp"
+                android:layout_height="60.8dp"
+                android:background="@drawable/textview_circle"
+                android:backgroundTint="#39add1"
+                android:id="@+id/taste_abu"
+                android:text="ABU"
+                android:textSize="10.5sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingTop="25dp"
+                android:textColor="#ffffff"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="낮은 편"
+                android:textColor="#5e6977"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="60.8dp"
+                android:layout_height="60.8dp"
+                android:background="@drawable/textview_circle"
+                android:backgroundTint="#5e6977"
+                android:textSize="10.5sp"
+                android:textStyle="bold"
+                android:id="@+id/taste_kcal"
+                android:text="Kcal"
+                android:gravity="center"
+                android:paddingTop="25dp"
+                android:textColor="#ffffff"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:text="보통"
+                android:textColor="#5e6977"
+                android:textSize="12sp"/>
+        </LinearLayout>
     </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:id="@+id/taste_line_1"
+        android:layout_below="@+id/taste_info_layout"
+        android:layout_marginRight="16.5dp"
+        android:layout_marginLeft="16.5dp"
+        android:layout_marginTop="26.8dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/taste_line_2"
+        android:layout_below="@+id/taste_line_1"
+        android:text="카테고리"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="18.5dp"
+        android:textColor="#747474" />
 
 
 </RelativeLayout>
