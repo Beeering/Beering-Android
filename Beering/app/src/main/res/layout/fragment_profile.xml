@@ -60,7 +60,7 @@
                 android:id="@+id/profile_view_pager"
                 android:layout_below="@id/tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="830dp"
                 />
         </RelativeLayout>
 
