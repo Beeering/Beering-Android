@@ -1,6 +1,7 @@
 package io.beering.beering;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +65,7 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
         holder.itemName.setText(item.getBeerName());
         holder.itemStyle.setText(item.getBeerStyle());
         holder.itemNation.setText(item.getBeerNation());
-        holder.itemBeerImage.setImageResource(item.getBeerImage());
+        holder.itemBeerImage.setImageURI(Uri.parse(item.getBeerImage()));
     }
 
     @Override

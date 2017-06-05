@@ -9,8 +9,13 @@ public class Beer {
     private String beerName;
     private String beerStyle;
     private String beerNation;
-    private int beerImage;
+    private String beerImage;
 
+    private String beerHistory;
+    private String beerAbv;
+    private String beerIbu;
+    private String beerKcal;
+    private String beerSrm;
 
     public void setBeerName(String name) {
         this.beerName = name;
@@ -24,8 +29,28 @@ public class Beer {
         this.beerNation = nation;
     }
 
-    public void setBeerImage(int image) {
+    public void setBeerImage(String image) {
         this.beerImage = image;
+    }
+
+    public void setBeerHistory(String history) {
+        this.beerHistory = history;
+    }
+
+    public void setBeerAbv(String abv) {
+        this.beerAbv = abv;
+    }
+
+    public void setBeerIbu(String ibu) {
+        this.beerIbu = ibu;
+    }
+
+    public void setBeerKcal(String kcal) {
+        this.beerKcal = kcal;
+    }
+
+    public void setBeerSrm(String srm) {
+        this.beerSrm = srm;
     }
 
     public String getBeerName() {
@@ -40,7 +65,28 @@ public class Beer {
         return beerNation;
     }
 
-    public int getBeerImage() {
+    public String getBeerImage() {
         return beerImage;
     }
+
+    public String getBeerHistory() {
+        return beerHistory;
+    }
+
+    public String getBeerAbv() {
+        return beerAbv;
+    }
+
+    public String getBeerIbu() {
+        return beerIbu;
+    }
+
+    public String getBeerKcal() {
+        return beerKcal;
+    }
+
+    public String getBeerSrm() {
+        return beerSrm;
+    }
+
 }
