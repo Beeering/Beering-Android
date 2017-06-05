@@ -31,7 +31,7 @@ public class BeerFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-    RecyclerView.Adapter adapter;
+    private RecyclerView.Adapter adapter;
 
     public BeerFragment() {
         // Required empty public constructor
@@ -62,9 +62,8 @@ public class BeerFragment extends Fragment {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String getBeerJsonStr = "";
-
-
                 Log.d("비어리스트-----", "성공");
+
                 try {
                     getBeerJsonStr = new String(responseBody, "UTF-8");
                 } catch (UnsupportedEncodingException e) {
@@ -77,6 +76,7 @@ public class BeerFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 try {
                     // info 내부에 정보 있음
                     JSONArray jbeerList = jb.getJSONArray("info");
@@ -106,6 +106,9 @@ public class BeerFragment extends Fragment {
                         beer.setBeerStyle(jbeerStyle);
 
                         beerList.add(beer);
+
+                        adapter = new BeerRecyclerAdapter(beerList);
+                        recyclerView.setAdapter(adapter);
                     }
 
                 } catch (JSONException e) {
@@ -119,10 +122,5 @@ public class BeerFragment extends Fragment {
                 Log.d("비어리스트-----", "실패");
             }
         });
-
-        adapter = new BeerRecyclerAdapter(beerList);
-        recyclerView.setAdapter(adapter);
-
     }
-
 }

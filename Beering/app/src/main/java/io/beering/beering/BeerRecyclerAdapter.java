@@ -21,7 +21,7 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapter.ViewHolder> {
 
     private List<Beer> beerList;
-    private int itemLayout;
+    private int currentPos;
 
     public BeerRecyclerAdapter(List<Beer> items) {
         this.beerList = items;
@@ -46,17 +46,22 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_card_beer, parent ,false);
+
+        final ViewHolder viewHolderBeer = new ViewHolder(v);
+
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "맥주 누름", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), BeerDetailActivity.class);
+                int beerId = viewHolderBeer.getAdapterPosition()+1;
+                intent.putExtra("beer_id", beerId);
                 v.getContext().startActivity(intent);
+
             }
         });
 
-        ViewHolder viewHolder = new ViewHolder(v);
-        return viewHolder;
+        return viewHolderBeer;
     }
 
     @Override

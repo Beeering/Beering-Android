@@ -1,6 +1,7 @@
 package io.beering.beering;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
@@ -8,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +21,17 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+
+import cz.msebera.android.httpclient.Header;
+import io.beering.beering.Proxy.Proxy;
+
 import static io.beering.beering.R.id.logo_text;
 
 public class BeerDetailActivity extends AppCompatActivity {
@@ -27,7 +40,6 @@ public class BeerDetailActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView writeReviewBtn;
 
-
     ImageButton cancelBtn;
     Button completeBtn;
     EditText reviewText;
@@ -35,6 +47,18 @@ public class BeerDetailActivity extends AppCompatActivity {
 
     private String reviewTextContent;
     private Float reviewStarRating;
+
+    JSONObject jsonStr;
+
+    ///////////
+    TextView beerNameText;
+    TextView beerStyleText;
+    TextView beerNationText;
+    TextView beerAbvText;
+    TextView beerIbuText;
+    TextView beerKcalText;
+    TextView beerHistory;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +73,56 @@ public class BeerDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbarSetting();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //activity_beer_detail에서 가져오기
+        beerNameText = (TextView) findViewById(R.id.beer_name);
+        beerStyleText = (TextView) findViewById(R.id.beer_style);
+        beerNationText = (TextView) findViewById(R.id.beer_nation);
+        beerAbvText = (TextView) findViewById(R.id.beer_abv_num);
+        beerIbuText = (TextView) findViewById(R.id.beer_ibu_num);
+        beerKcalText = (TextView) findViewById(R.id.beer_kcal_num);
+        beerHistory = (TextView) findViewById(R.id.beer_detail_desc_text);
+
+        //intent beer_id 가져오기
+        Intent intent = getIntent();
+        int selectedBeerId = intent.getIntExtra("beer_id", -1);
+
+        Proxy.getBeer("/beer/get", selectedBeerId, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                Log.d("비어 디테일", "성공");
+                String getJsonStr = "";
+
+                try {
+                    getJsonStr = new String(responseBody, "UTF-8");
+                    jsonStr = new JSONObject(getJsonStr);
+
+                    JSONArray jsonArr = jsonStr.getJSONArray("info");
+                    JSONObject jsonObj = jsonArr.getJSONObject(0);
+
+                    beerNameText.setText(jsonObj.getString("beer_korname"));
+                    beerStyleText.setText(jsonObj.getString("style_id"));
+                    beerNationText.setText(jsonObj.getString("nation_id"));
+                    beerIbuText.setText(jsonObj.getString("beer_ibu"));
+                    beerAbvText.setText(jsonObj.getString("beer_abv")+"%");
+                    beerKcalText.setText(jsonObj.getString("beer_kcal"));
+                    beerHistory.setText(jsonObj.getString("history"));
+
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("비어 디테일", "실패");
+            }
+        });
+
 
         // 맥주 이미지 원형으로
         beerImage = (ImageView) findViewById(R.id.beer_image_circle);

@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/beer_name"
-        android:text="키읔 IPA"
+        android:text="맥주 이름"
         android:layout_marginBottom="13.6dp"
         android:textColor="#ffffff"
         android:textSize="21.2sp"
@@ -50,7 +50,7 @@
             android:id="@+id/beer_style"
             android:textSize="12sp"
             android:textColor="#ffffff"
-            android:text="India Pale Ale"/>
+            android:text="스타일"/>
         <View
             android:layout_width="1dp"
             android:layout_height="10dp"
@@ -68,7 +68,7 @@
             android:layout_toRightOf="@+id/vertical_line"
             android:textSize="12sp"
             android:textColor="#ffffff"
-            android:text="India Pale Ale"/>
+            android:text="국가"/>
 
     </RelativeLayout>
     
@@ -171,7 +171,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/beer_ibu_num"
-            android:text="54"
+            android:text="0"
             android:textColor="#6da624"
             android:layout_toRightOf="@+id/ibu_icon"
             android:textSize="13sp"
@@ -186,14 +186,14 @@
             android:textColor="#ffffff"
             android:background="#39add1"
             android:gravity="center_horizontal"
-            android:text="IBU"
+            android:text="ABV"
             android:layout_marginRight="5.4dp"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7.5%"
-            android:id="@+id/beer_abu_num"
+            android:text="0%"
+            android:id="@+id/beer_abv_num"
             android:textColor="#39add1"
             android:layout_toRightOf="@+id/abu_icon"
             android:textSize="13sp"
@@ -203,7 +203,7 @@
             android:layout_width="22.4dp"
             android:layout_height="13.8dp"
             android:id="@+id/kcal_icon"
-            android:layout_toRightOf="@+id/beer_abu_num"
+            android:layout_toRightOf="@+id/beer_abv_num"
             android:textSize="9.5sp"
             android:textColor="#ffffff"
             android:background="#5e6977"
@@ -215,7 +215,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/beer_kcal_num"
-            android:text="240"
+            android:text="0"
             android:textColor="#5e6977"
             android:layout_toRightOf="@+id/kcal_icon"
             android:textSize="13sp"
@@ -258,7 +258,7 @@
         android:layout_marginTop="5.5dp"
         android:layout_marginBottom="13dp"
         android:layout_below="@+id/beer_introduce_text"
-        android:text="갓 짠 라임이 떠오르는 은은하고 신선한 과일향! 쓴 맛은 덜하고 부드럽게 넘어가는 목넘김을 자랑하는 키읔 IPA. 산뜻하고 깨끗한 첫 잔으로 제격이다. 이태원 더부스를 방문하여 피맥과 함께 즐겨보자."/>
+        android:text="맥주 소개 내용"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
