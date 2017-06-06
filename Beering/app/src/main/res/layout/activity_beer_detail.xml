@@ -141,6 +141,7 @@
                     android:textColor="#ffffff"
                     android:background="#6da624"
                     android:gravity="center_horizontal"
+                    android:layout_centerVertical="true"
                     android:text="IBU"
                     android:layout_marginRight="5.4dp"
                     />
@@ -163,6 +164,7 @@
                     android:textColor="#ffffff"
                     android:background="#39add1"
                     android:gravity="center_horizontal"
+                    android:layout_centerVertical="true"
                     android:text="ABV"
                     android:layout_marginRight="5.4dp"
                     />
@@ -185,6 +187,7 @@
                     android:textColor="#ffffff"
                     android:background="#5e6977"
                     android:gravity="center_horizontal"
+                    android:layout_centerVertical="true"
                     android:text="Kcal"
                     android:layout_marginRight="5.4dp"
                     />
