@@ -41,12 +41,7 @@ public class StampFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = (RecyclerView)getView().findViewById(R.id.stamp_recycler_view);
-        layoutManager = new LinearLayoutManager(getContext()){
-            @Override
-            public boolean canScrollVertically() {
-                return false;
-            }
-        };
+        layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new StampRecyclerAdapter();

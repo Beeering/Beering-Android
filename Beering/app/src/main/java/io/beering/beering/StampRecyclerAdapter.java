@@ -13,11 +13,11 @@ import android.widget.TextView;
  */
 
 public class StampRecyclerAdapter extends RecyclerView.Adapter<StampRecyclerAdapter.ViewHolder>{
-    private int[] stamp_image = {R.drawable.stamp_1, R.drawable.stamp_2, R.drawable.stamp_3};
-    private String[] stamp_name = {"국민 IPA", "ㅋ 맥주", "대동강 페일에일"};
-    private String[] stamp_style = {"India Pale ale", "Stout", "style 3"};
-    private String[] stamp_nation = {"South Korea", "Nation 2", "Nation 3"};
-    private int[] stamp_rated = {3, 4, 2};
+    private int[] stamp_image = {R.drawable.stamp_1, R.drawable.stamp_2, R.drawable.stamp_3, R.drawable.stamp_1, R.drawable.stamp_2, R.drawable.stamp_3};
+    private String[] stamp_name = {"국민 IPA", "ㅋ 맥주", "대동강 페일에일", "맥주 4", "맥주 5", "맥주 6"};
+    private String[] stamp_style = {"India Pale ale", "Stout", "style 3", "Style", "Style", "Style"};
+    private String[] stamp_nation = {"South Korea", "Nation 2", "Nation 3", "Nation", "Nation", "Nation"};
+    private int[] stamp_rated = {3, 4, 2, 0, 5, 3};
 
     class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView itemStampImage;

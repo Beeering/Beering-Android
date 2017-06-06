@@ -2,68 +2,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="io.beering.beering.Fragement.ProfileFragment"
     android:background="#ffffff">
 
-
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
         >
 
-        <RelativeLayout
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/profile_image"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/profile_image_tmp"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="27.8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_name"
+            android:textSize="17.5sp"
+            android:textColor="#525252"
+            android:textStyle="bold"
+            android:text="김첨지"
+            android:layout_below="@+id/profile_image"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="13.2dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_below="@id/user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:minHeight="?attr/actionBarSize"
+            android:background="#ffffff"
+            app:tabTextColor="#747474"
+            app:tabSelectedTextColor="#ff7415"
+            app:tabIndicatorColor="#ff7415"
+            app:tabMode="fixed" />
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/profile_image"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/profile_image_tmp"
-                android:adjustViewBounds="true"
-                android:layout_marginTop="27.8dp"
-                />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/profile_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:layout_below="@id/tab_layout" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/user_name"
-                android:textSize="17.5sp"
-                android:textColor="#525252"
-                android:textStyle="bold"
-                android:text="Beergeekkk"
-                android:layout_below="@+id/profile_image"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="13.2dp"
-                android:layout_marginBottom="15dp"
-                />
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_below="@id/user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"
-                android:background="#ffffff"
-                app:tabTextColor="#747474"
-                app:tabSelectedTextColor="#ff7415"
-                app:tabIndicatorColor="#ff7415"
-                app:tabMode="fixed" />
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/profile_view_pager"
-                android:layout_below="@id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="830dp"
-                />
-        </RelativeLayout>
-
-    </ScrollView>
-
+    </RelativeLayout>
 </FrameLayout>
