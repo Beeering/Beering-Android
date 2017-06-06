@@ -151,7 +151,6 @@
         android:layout_height="124dp"
         android:layout_below="@+id/taste_line_2"
         android:layout_centerHorizontal="true"
-        android:background="#fffa11"
         android:id="@+id/pie_graph">
     </com.github.mikephil.charting.charts.PieChart>
 
