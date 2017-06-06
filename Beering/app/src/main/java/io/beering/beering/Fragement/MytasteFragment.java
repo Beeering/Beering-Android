@@ -5,10 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import io.beering.beering.PieGraph;
 import io.beering.beering.R;
 
 public class MytasteFragment extends Fragment {
@@ -33,8 +31,7 @@ public class MytasteFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_mytaste, container, false);
 
-        RelativeLayout relativeLayout = (RelativeLayout) rootView.findViewById(R.id.pie_graph);
-        relativeLayout.addView(new PieGraph(getActivity()));
+        
 
         return rootView;
     }

@@ -146,14 +146,15 @@
         android:layout_marginLeft="18.5dp"
         android:textColor="#747474" />
 
-    <RelativeLayout
+    <com.github.mikephil.charting.charts.PieChart
         android:layout_width="124dp"
         android:layout_height="124dp"
-        android:id="@+id/pie_graph"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/taste_line_2"
-        android:background="#ffba0c">
-    </RelativeLayout>
+        android:layout_centerHorizontal="true"
+        android:background="#fffa11"
+        android:id="@+id/pie_graph">
+    </com.github.mikephil.charting.charts.PieChart>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
