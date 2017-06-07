@@ -156,13 +156,13 @@
                     android:textColor="#747474" />
             </LinearLayout>
 
-            <View
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="14.2dp"
                 android:layout_below="@id/pub_linear_3"
-                android:background="#fdf3f1">
-            </View>
+                android:src="@drawable/pub_location_img">
+            </ImageView>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
