@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17.5dp"
+        android:paddingTop="13dp"
+        android:id="@+id/comment_layout_2">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/comment_image"
+            android:layout_gravity="center"
+            android:src="@drawable/face_1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/comment_layout_1"
+            android:layout_toRightOf="@id/comment_image"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/comment_layout_3"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/comment_name"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginRight="10dp"
+                    android:text="김첨지"
+                    android:textColor="#2d2724"
+                    android:textSize="15.2sp"/>
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/comment_layout_1"
+                    android:id="@+id/comment_rated"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="3"
+                    android:stepSize="1"
+                    android:max="5"
+                    android:progressTint="#ff7415"
+                    android:progressBackgroundTint="#5e6977"
+                    style="?android:attr/ratingBarStyleSmall"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/comment_date"
+                android:textColor="#747474"
+                android:textSize="10sp"
+                android:text="2017.05.07"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment_layout_2"
+        android:id="@+id/comment_text"
+        android:layout_marginLeft="82dp"
+        android:layout_marginRight="20dp"
+        android:lineSpacingExtra="2sp"
+        android:text="갓 짠 라임이 떠오르는 은은하고 신선한 과일향! 쓴 맛은 덜하고 부드럽게 넘어가는 목넘김을 자랑하는 키읔 IPA. 산뜻하고 깨끗한 첫 잔으로 제격이다."
+        android:textSize="11sp"
+        android:textColor="#747474"
+        android:layout_marginBottom="13dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cfcfcf"
+        android:layout_marginRight="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_below="@+id/comment_text"
+        />
+</RelativeLayout>

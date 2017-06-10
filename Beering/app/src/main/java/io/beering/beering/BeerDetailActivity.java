@@ -8,6 +8,8 @@ import android.graphics.drawable.shapes.OvalShape;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -58,6 +60,14 @@ public class BeerDetailActivity extends AppCompatActivity {
     TextView beerIbuText;
     TextView beerKcalText;
     TextView beerHistory;
+
+    ////////
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.Adapter adapter;
+
+    ////
+    ImageView comment_image;
 
 
     @Override
@@ -165,6 +175,15 @@ public class BeerDetailActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+
+        // 맥주리뷰 불러오기
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerview_comment);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new CommentRecyclerAdapter();
+        recyclerView.setAdapter(adapter);
+
 
     }
 
