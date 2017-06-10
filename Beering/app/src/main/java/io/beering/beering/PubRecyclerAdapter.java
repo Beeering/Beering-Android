@@ -1,14 +1,12 @@
 package io.beering.beering;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,6 +19,9 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class PubRecyclerAdapter extends RecyclerView.Adapter<PubRecyclerAdapter.ViewHolder> {
 
     private List<Pub> pubList;
+
+    ///
+    private int[] tmpImage = {R.drawable.pub_1, R.drawable.pub_2, R.drawable.pub_3};
 
     public PubRecyclerAdapter(List<Pub> items) {
         this.pubList = items;
@@ -43,18 +44,17 @@ public class PubRecyclerAdapter extends RecyclerView.Adapter<PubRecyclerAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_card_pub, parent ,false);
 
+        final ViewHolder viewHolderPub = new ViewHolder(v);
+
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "펍 누름", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), PubDetailActivity.class);
+                int pubId = viewHolderPub.getAdapterPosition()+1;
+                intent.putExtra("pub_id", pubId);
                 v.getContext().startActivity(intent);
-
-                // intent에 extra로 position줘야함
             }
         });
-
-        ViewHolder viewHolderPub = new ViewHolder(v);
 
         return viewHolderPub;
     }
@@ -64,7 +64,7 @@ public class PubRecyclerAdapter extends RecyclerView.Adapter<PubRecyclerAdapter.
         Pub item = pubList.get(position);
         holder.itemKorName.setText(item.getPubKorName());
         holder.itemEngName.setText(item.getPubEngName());
-        holder.itemPubImage.setImageURI(Uri.parse(item.getPubImage()));
+        holder.itemPubImage.setImageResource(tmpImage[position % 3]);
     }
 
     @Override

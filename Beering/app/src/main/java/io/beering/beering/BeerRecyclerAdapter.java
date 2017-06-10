@@ -1,14 +1,12 @@
 package io.beering.beering;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,7 +19,9 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapter.ViewHolder> {
 
     private List<Beer> beerList;
-    private int currentPos;
+
+    ///
+    private int[] tmpImage = {R.drawable.beer_1, R.drawable.beer_2, R.drawable.beer_3};
 
     public BeerRecyclerAdapter(List<Beer> items) {
         this.beerList = items;
@@ -52,12 +52,10 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "맥주 누름", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), BeerDetailActivity.class);
                 int beerId = viewHolderBeer.getAdapterPosition()+1;
                 intent.putExtra("beer_id", beerId);
                 v.getContext().startActivity(intent);
-
             }
         });
 
@@ -70,7 +68,7 @@ public class BeerRecyclerAdapter extends RecyclerView.Adapter<BeerRecyclerAdapte
         holder.itemName.setText(item.getBeerName());
         holder.itemStyle.setText(item.getBeerStyle());
         holder.itemNation.setText(item.getBeerNation());
-        holder.itemBeerImage.setImageURI(Uri.parse(item.getBeerImage()));
+        holder.itemBeerImage.setImageResource(tmpImage[position % 3]);
     }
 
     @Override

@@ -111,8 +111,17 @@ public class BeerDetailActivity extends AppCompatActivity {
                     JSONObject jsonObj = jsonArr.getJSONObject(0);
 
                     beerNameText.setText(jsonObj.getString("beer_korname"));
+
                     beerStyleText.setText(jsonObj.getString("style_id"));
+                    if(jsonObj.getString("style_id").equals("1")) {
+                        beerStyleText.setText("India Pale Ale");
+                    }
+
                     beerNationText.setText(jsonObj.getString("nation_id"));
+                    if(jsonObj.getString("nation_id").equals("1")) {
+                        beerNationText.setText("South Korea");
+                    }
+
                     beerIbuText.setText(jsonObj.getString("beer_ibu"));
                     beerAbvText.setText(jsonObj.getString("beer_abv")+"%");
                     beerKcalText.setText(jsonObj.getString("beer_kcal"));

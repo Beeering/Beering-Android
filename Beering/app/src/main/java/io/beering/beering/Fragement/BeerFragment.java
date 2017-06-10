@@ -93,6 +93,13 @@ public class BeerFragment extends Fragment {
                         String jbeerKcal = jbeer.getString("beer_kcal");
                         String jbeerSrm = jbeer.getString("beer_srm");
                         String jbeerStyle = jbeer.getString("style_id");
+                        if (jbeerStyle.equals("1")) {
+                            jbeerStyle = "India Pale Ale";
+                        }
+
+                        if (jbeerNation.equals("1")) {
+                            jbeerNation = "South Korea";
+                        }
 
                         Beer beer = new Beer();
                         beer.setBeerName(jbeerKorName);
