@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 
@@ -32,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Toast.makeText(getApplicationContext(), "성공: "+Profile.getCurrentProfile().getId(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "성공: "+Profile.getCurrentProfile().getId(), Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);

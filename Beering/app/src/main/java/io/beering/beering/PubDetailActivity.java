@@ -1,20 +1,41 @@
 package io.beering.beering;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+
+import cz.msebera.android.httpclient.Header;
+import io.beering.beering.Proxy.Proxy;
 
 import static io.beering.beering.R.id.logo_text;
 
 public class PubDetailActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+
+
+    JSONObject jsonStr;
+
+    ///////////
+    TextView pubKorNameText;
+    TextView pubEngNameText;
+    TextView pubAddressText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +51,45 @@ public class PubDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbarSetting();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        //intent pub_id 가져오기
+        Intent intent = getIntent();
+        int selectedPubId = intent.getIntExtra("pub_id", -1);
+
+        pubKorNameText = (TextView) findViewById(R.id.pub_text_1);
+        pubEngNameText = (TextView) findViewById(R.id.pub_text_2);
+        pubAddressText = (TextView) findViewById(R.id.pub_address);
+
+        Proxy.getPub("/pub/get", selectedPubId, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                Log.d("펍 디테일", "성공");
+                String getJsonStr = "";
+
+                try {
+                    getJsonStr = new String(responseBody, "UTF-8");
+                    jsonStr = new JSONObject(getJsonStr);
+
+                    JSONArray jsonArr = jsonStr.getJSONArray("info");
+                    JSONObject jsonObj = jsonArr.getJSONObject(0);
+
+                    pubKorNameText.setText(jsonObj.getString("pub_korname"));
+                    pubEngNameText.setText(jsonObj.getString("pub_engname"));
+                    pubAddressText.setText(jsonObj.getString("pub_location"));
+
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                Log.d("펍 디테일", "실패");
+            }
+        });
     }
 
     @Override
@@ -57,3 +117,5 @@ public class PubDetailActivity extends AppCompatActivity {
         searchBtn.setVisibility(View.GONE);
     }
 }
+
+

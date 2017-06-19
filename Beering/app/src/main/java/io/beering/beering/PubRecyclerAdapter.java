@@ -2,6 +2,7 @@ package io.beering.beering;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,14 @@ public class PubRecyclerAdapter extends RecyclerView.Adapter<PubRecyclerAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PubDetailActivity.class);
+                Log.d("..........!!", getApplicationContext()+"");
+
+                try{ Thread.sleep(1000);}
+                catch(Exception e){}
+
+
+
+
                 int pubId = viewHolderPub.getAdapterPosition()+1;
                 intent.putExtra("pub_id", pubId);
                 v.getContext().startActivity(intent);
