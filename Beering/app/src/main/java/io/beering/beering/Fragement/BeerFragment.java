@@ -7,8 +7,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -26,12 +30,16 @@ import io.beering.beering.BeerRecyclerAdapter;
 import io.beering.beering.Proxy.Proxy;
 import io.beering.beering.R;
 
+import static com.facebook.FacebookSdk.getApplicationContext;
+
 
 public class BeerFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
+
+    Button sortButton;
 
     public BeerFragment() {
         // Required empty public constructor
@@ -127,6 +135,26 @@ public class BeerFragment extends Fragment {
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 Log.d("비어리스트-----", "실패");
+            }
+        });
+
+
+        //우측 상단 정렬버튼 가져오기
+        sortButton = (Button) getView().findViewById(R.id.sort_button);
+
+        sortButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu dropDownMenu = new PopupMenu(getApplicationContext(), sortButton);
+                dropDownMenu.getMenuInflater().inflate(R.menu.drop_down_menu, dropDownMenu.getMenu());
+                dropDownMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        Toast.makeText(getApplicationContext(), "You have clicked " + item.getTitle(), Toast.LENGTH_LONG).show();
+                        return true;
+                    }
+                });
+                dropDownMenu.show();
             }
         });
     }

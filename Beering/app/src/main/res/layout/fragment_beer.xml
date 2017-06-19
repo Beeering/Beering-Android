@@ -10,7 +10,7 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
+        android:checked="false"
         android:buttonTint="#ff7415"
         android:textColor="#34373c"
         android:textSize="15.2sp"
@@ -30,6 +30,7 @@
         android:textColor="#43484d"
         android:drawableRight="@drawable/filter_orange"
         android:textSize="15.2sp"
+        android:id="@+id/sort_button"
         />
 
     <android.support.v7.widget.RecyclerView
