@@ -17,6 +17,7 @@ import android.widget.TextView;
 import io.beering.beering.Fragement.BeerFragment;
 import io.beering.beering.Fragement.ProfileFragment;
 import io.beering.beering.Fragement.PubFragment;
+import io.beering.beering.Fragement.RecommendFragement;
 
 import static io.beering.beering.R.id.logo_text;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
 
     BeerFragment beerFragment;
+    RecommendFragement recommendFragement;
     ProfileFragment profileFragment;
     PubFragment pubFragment;
     MenuItem prevMenuItem;
@@ -35,15 +37,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             switch (item.getItemId()) {
                 case R.id.main_beer:
                     viewPager.setCurrentItem(0);
                     return true;
-                case R.id.main_pub:
+                case R.id.main_recommend:
                     viewPager.setCurrentItem(1);
                     return true;
-                case R.id.my_profile:
+                case R.id.main_pub:
                     viewPager.setCurrentItem(2);
+                    return true;
+                case R.id.my_profile:
+                    viewPager.setCurrentItem(3);
                     return true;
             }
             return false;
@@ -56,27 +62,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         viewPager = (ViewPager)findViewById(R.id.viewpager);
 
         final BottomNavigationView bottomNavigation = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        //상단 바 색
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.rgb(220, 90, 1));
         }
@@ -91,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 if (viewPager.getCurrentItem() == 0) toolbarWithLogoImage();
                 if (viewPager.getCurrentItem() == 1) toolbarWithLogoImage();
-                if (viewPager.getCurrentItem() == 2) toolbarProfile();
+                if (viewPager.getCurrentItem() == 2) toolbarWithLogoImage();
+                if (viewPager.getCurrentItem() == 3) toolbarProfile();
             }
 
             @Override
@@ -119,9 +111,11 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         beerFragment = new BeerFragment();
+        recommendFragement = new RecommendFragement();
         pubFragment = new PubFragment();
         profileFragment = new ProfileFragment();
         adapter.addFragment(beerFragment);
+        adapter.addFragment(recommendFragement);
         adapter.addFragment(pubFragment);
         adapter.addFragment(profileFragment);
         viewPager.setAdapter(adapter);

@@ -7,6 +7,11 @@
         android:title="@string/main_beer" />
 
     <item
+        android:id="@+id/main_recommend"
+        android:icon="@drawable/beer"
+        android:title="추천" />
+
+    <item
         android:id="@+id/main_pub"
         android:icon="@drawable/pub"
         android:title="@string/main_pub" />

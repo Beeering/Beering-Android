@@ -7,11 +7,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.PopupMenu;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -29,26 +26,28 @@ import io.beering.beering.BeerRecyclerAdapter;
 import io.beering.beering.Proxy.Proxy;
 import io.beering.beering.R;
 
-import static com.facebook.FacebookSdk.getApplicationContext;
 
-
-public class BeerFragment extends Fragment {
+public class RecommendFragement extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
 
-    Button sortButton;
-
-    public BeerFragment() {
+    public RecommendFragement() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beer, container, false);
+        return inflater.inflate(R.layout.fragment_recommend, container, false);
     }
 
     @Override
@@ -56,7 +55,7 @@ public class BeerFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         //beer recyclerview 생성
-        recyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view_beer);
+        recyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view_beer_recommend);
         layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -89,7 +88,7 @@ public class BeerFragment extends Fragment {
                     JSONArray jbeerList = jb.getJSONArray("info");
 
                     // json 데이터 속 맥주 갯수만큼 Beer객체 만듦
-                    for(int i = 0; i < jbeerList.length(); i++) {
+                    for(int i = 20; i < 25; i++) {
                         JSONObject jbeer = (JSONObject) jbeerList.getJSONObject(i);
                         String jbeerNation = jbeer.getString("nation_id");
                         String jbeerKorName = jbeer.getString("beer_korname");
@@ -133,28 +132,7 @@ public class BeerFragment extends Fragment {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d("비어리스트-----", "실패");
-            }
-        });
-
-
-        //우측 상단 정렬버튼 가져오기
-        sortButton = (Button) getView().findViewById(R.id.sort_button);
-
-        sortButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu dropDownMenu = new PopupMenu(getApplicationContext(), sortButton);
-                dropDownMenu.getMenuInflater().inflate(R.menu.drop_down_menu, dropDownMenu.getMenu());
-
-                dropDownMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-//                        Toast.makeText(getApplicationContext(), "You have clicked " + item.getTitle(), Toast.LENGTH_LONG).show();
-                        return true;
-                    }
-                });
-                dropDownMenu.show();
+                Log.d("비어추천리스트-----", "실패");
             }
         });
     }
