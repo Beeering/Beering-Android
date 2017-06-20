@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -26,12 +28,15 @@ import io.beering.beering.Pub;
 import io.beering.beering.PubRecyclerAdapter;
 import io.beering.beering.R;
 
+import static com.facebook.FacebookSdk.getApplicationContext;
+
 
 public class PubFragment extends Fragment {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
+    Button sortbotton;
 
     public PubFragment() {
         // Required empty public constructor
@@ -51,6 +56,15 @@ public class PubFragment extends Fragment {
         recyclerView = (RecyclerView)getView().findViewById(R.id.recycler_view_pub);
         layoutManager = new GridLayoutManager(this.getContext(), 2);
         recyclerView.setLayoutManager(layoutManager);
+
+        sortbotton = (Button) getView().findViewById(R.id.pub_filter_btn);
+
+        sortbotton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "서비스 준비 중 입니다.", Toast.LENGTH_LONG).show();
+            }
+        });
 
         //Pub 리스트
         final List<Pub> pubList = new ArrayList<Pub>();

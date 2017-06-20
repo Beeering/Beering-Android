@@ -19,6 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/pub_filter_btn"
         android:backgroundTint="#ffffff"
         android:layout_marginTop="8dp"
         android:layout_gravity="right"
