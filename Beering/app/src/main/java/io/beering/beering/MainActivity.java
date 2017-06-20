@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         final BottomNavigationView bottomNavigation = (BottomNavigationView) findViewById(R.id.navigation);
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        // 애니메이션 해제
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigation);
+
         //상단 바 색
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.rgb(220, 90, 1));
