@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.PopupMenu;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -37,6 +38,7 @@ public class BeerFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
+    CheckBox checkBox;
 
     Button sortButton;
 
@@ -137,6 +139,21 @@ public class BeerFragment extends Fragment {
             }
         });
 
+
+        //좌측상단 체크상자
+        checkBox = (CheckBox) getView().findViewById(R.id.checkBox1);
+
+        final List<Beer> beerList2;
+
+        if(checkBox.isChecked()) {
+            beerList2 = beerList.subList(4, 37);
+            adapter = new BeerRecyclerAdapter(beerList2);
+            recyclerView.setAdapter(adapter);
+        }
+        else {
+            adapter = new BeerRecyclerAdapter(beerList);
+            recyclerView.setAdapter(adapter);
+        }
 
         //우측 상단 정렬버튼 가져오기
         sortButton = (Button) getView().findViewById(R.id.sort_button);
